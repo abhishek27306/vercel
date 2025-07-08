@@ -1,175 +1,605 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lovely Professional University</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Abhishek Bhattacherjee - Associate Professor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #fc466b, #3f5efb);
-      color: white;
-      line-height: 1.6;
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
 
-    .hero {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      text-align: center;
-      padding: 20px;
-      background: linear-gradient(135deg, #fc466b, #3f5efb);
-    }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-    .glass {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      padding: 40px;
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(15px);
-      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-      max-width: 800px;
-      width: 100%;
-      animation: fadeIn 1s ease-in-out;
-    }
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            animation: slideInDown 0.8s ease-out;
+        }
 
-    .glass h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-    }
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
 
-    .glass p {
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-    }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #667eea;
+            margin: 0 auto 20px;
+            display: block;
+            transition: transform 0.3s ease;
+        }
 
-    .section {
-      padding: 60px 20px;
-      text-align: center;
-    }
+        .profile-img:hover {
+            transform: scale(1.1);
+        }
 
-    .section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
+        .header h1 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-    .programs, .highlights {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 20px;
-    }
+        .header .subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
 
-    .card {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border-radius: 15px;
-      padding: 20px;
-      width: 250px;
-      transition: transform 0.3s;
-    }
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
 
-    .btn {
-      margin-top: 30px;
-      background: #ffffff20;
-      border: 2px solid #ffffff50;
-      padding: 12px 25px;
-      border-radius: 30px;
-      color: #fff;
-      font-weight: 500;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      display: inline-block;
-    }
+        .contact-item:hover {
+            background: rgba(102, 126, 234, 0.2);
+            transform: translateY(-2px);
+        }
 
-    .btn:hover {
-      background: #fff;
-      color: #3f5efb;
-    }
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.8s ease-out;
+            transition: transform 0.3s ease;
+        }
 
-    @media (max-width: 768px) {
-      .card {
-        width: 90%;
-      }
-      .glass h1 {
-        font-size: 2rem;
-      }
-    }
-  </style>
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(102, 126, 234, 0.05);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            background: rgba(102, 126, 234, 0.1);
+            transform: translateX(5px);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -37px;
+            top: 25px;
+            width: 12px;
+            height: 12px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        .degree {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.1em;
+        }
+
+        .institution {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
+        .year {
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-item {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .skill-item:hover {
+            background: rgba(102, 126, 234, 0.2);
+            transform: scale(1.05);
+        }
+
+        .publications {
+            max-height: 400px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #667eea #f1f1f1;
+        }
+
+        .publication-item {
+            padding: 15px;
+            margin-bottom: 15px;
+            background: rgba(102, 126, 234, 0.05);
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .publication-item:hover {
+            background: rgba(102, 126, 234, 0.1);
+            transform: translateX(5px);
+        }
+
+        .publication-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .publication-details {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: rgba(102, 126, 234, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            background: rgba(102, 126, 234, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-type {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .project-tech {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+        }
+
+        /* Scrollbar styling */
+        .publications::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .publications::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .publications::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 10px;
+        }
+
+        .publications::-webkit-scrollbar-thumb:hover {
+            background: #764ba2;
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <div class="header">
+            <div class="profile-img" style="background: linear-gradient(135deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center; color: white; font-size: 60px; font-weight: bold;">AB</div>
+            <h1>Dr. Abhishek Bhattacherjee</h1>
+            <p class="subtitle">Associate Professor | School of Computer Engineering</p>
+            <p class="subtitle">Lovely Professional University</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <span>Abhishek.27306@lpu.co.in</span>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <span>+91 9417606742</span>
+                </div>
+                <div class="contact-item">
+                    <span>🎓</span>
+                    <span>Ph.D. Computer Science</span>
+                </div>
+            </div>
+        </div>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="glass">
-      <h1>Lovely Professional University</h1>
-      <p>Transforming Education Through Innovation and Excellence</p>
-      <a href="#programs" class="btn">Explore Programs</a>
+        <div class="content">
+            <div class="section">
+                <h2>🎓 Academic Qualifications</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="degree">Ph.D. Computer Science Engineering</div>
+                        <div class="institution">Chitkara University</div>
+                        <div class="year">2024</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="degree">M.Tech Computer Science Engineering</div>
+                        <div class="institution">LPU Jalandhar</div>
+                        <div class="year">2012 (7.8 CGPA)</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="degree">B.Tech Computer Science Engineering</div>
+                        <div class="institution">PTU Jalandhar</div>
+                        <div class="year">2009 (76%)</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="degree">Diploma in Mould and Die Making</div>
+                        <div class="institution">CIPET Amritsar</div>
+                        <div class="year">2006 (81%)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>💼 Work Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="degree">Associate Professor</div>
+                        <div class="institution">Lovely Professional University</div>
+                        <div class="year">Jan 2022 - Present</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="degree">Head of Department & Assistant Professor</div>
+                        <div class="institution">Ludhiana Group of Colleges</div>
+                        <div class="year">Feb 2019 - Jan 2022</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="degree">Head of Department & Assistant Professor</div>
+                        <div class="institution">Himachal Institute of Engineering & Technology</div>
+                        <div class="year">Aug 2015 - Jan 2019</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="degree">Assistant Professor</div>
+                        <div class="institution">Gulzar Group of Institutions</div>
+                        <div class="year">May 2014 - Jul 2015</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🔧 Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">Python, TensorFlow, Keras</div>
+                    <div class="skill-item">Cloud Computing (AWS)</div>
+                    <div class="skill-item">Machine Learning & AI</div>
+                    <div class="skill-item">Web Development</div>
+                    <div class="skill-item">Mobile App Development</div>
+                    <div class="skill-item">IoT & Embedded Systems</div>
+                    <div class="skill-item">Network Security</div>
+                    <div class="skill-item">Database Management</div>
+                    <div class="skill-item">Digital Marketing</div>
+                    <div class="skill-item">Data Analytics</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📚 Subjects Taught</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">Computer Networks</div>
+                    <div class="skill-item">Cloud Computing</div>
+                    <div class="skill-item">Mobile Computing</div>
+                    <div class="skill-item">Software Engineering</div>
+                    <div class="skill-item">Web Technologies</div>
+                    <div class="skill-item">Ad-Hoc Networks</div>
+                    <div class="skill-item">Multimedia Applications</div>
+                    <div class="skill-item">Virtualization</div>
+                    <div class="skill-item">Cloud Microservices</div>
+                </div>
+            </div>
+
+            <div class="section full-width">
+                <h2>🚀 Student Projects Guided</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-type">Web Applications</div>
+                        <p>Hotel | Bus | Cinema | Tour | Ecommerce | Logistics Booking Systems</p>
+                        <div class="project-tech">Technologies: PHP, ASP, Python/Django, WordPress</div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-type">Mobile Applications</div>
+                        <p>Games | Social Apps | Chat Applications for Android and iOS</p>
+                        <div class="project-tech">Technologies: Android Studio, Xcode, Python TensorFlow</div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-type">IoT & Robotics</div>
+                        <p>Drones | Smart Dustbin Robot | Embedded Systems</p>
+                        <div class="project-tech">Technologies: Raspberry Pi, MATLAB, Python</div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-type">Cloud Computing</div>
+                        <p>IAAS | PAAS | SAAS | XAAS Development</p>
+                        <div class="project-tech">Technologies: AWS, Google Cloud Platform</div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-type">AI & Gaming</div>
+                        <p>Tic-tac-toe | 8 Queen | Chess | Animations</p>
+                        <div class="project-tech">Technologies: Maya, 3DMax, C++, Java</div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-type">Cybersecurity</div>
+                        <p>SQL Injection | Brute Force | Honeypot | Spoofing</p>
+                        <div class="project-tech">Technologies: Kali Linux, Havij, System Terminal</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section full-width">
+                <h2>📝 Research Publications</h2>
+                <div class="publications">
+                    <div class="publication-item">
+                        <div class="publication-title">Stakeholders' perspective towards employability: A hybrid fuzzy AHP-TOPSIS approach</div>
+                        <div class="publication-details">Education and Information Technologies (2023) - SCI Paper</div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Selection of portable hard disk drive based upon weighted aggregated sum product assessment method</div>
+                        <div class="publication-details">Measurement and Control (2020) - SCI Paper</div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Blood Cell Cancer Classification Using ResNet50 and Transfer Learning</div>
+                        <div class="publication-details">2024 International Conference on Decision Aid Sciences and Applications (DASA) - IEEE</div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Dental Diagnostics with Deep Learning: A VGG16-Based Approach</div>
+                        <div class="publication-details">2024 International Conference on Decision Aid Sciences and Applications (DASA) - IEEE</div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Automated Malaria Detection Using Deep Learning</div>
+                        <div class="publication-details">2024 International Conference on Decision Aid Sciences and Applications (DASA) - IEEE</div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Preparing Next-Gen Trailblazers: An EFA-Driven Investigation of Problem-Solving Skills</div>
+                        <div class="publication-details">2023 4th International Conference on Electronics and Sustainable Communication Systems (ICESC) - IEEE</div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Classifying the Severity of Apple Black Rot Disease with Deep Learning</div>
+                        <div class="publication-details">2023 3rd International Conference on Advances in Computing, Communication, Embedded and Secure Systems (ACCESS) - IEEE</div>
+                    </div>
+                    <div class="publication-item">
+                        <div class="publication-title">Predicting Rice Leaf Disease Outbreaks using CNN-SVM Models</div>
+                        <div class="publication-details">2023 IEEE International Conference on Contemporary Computing and Communications (InC4) - IEEE</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🔬 Patents & IPR</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="degree">Conveyor machine for Smart Logistics Management</div>
+                        <div class="institution">UK Design Patent</div>
+                        <div class="year">2023</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="degree">Intelligent system for on-street charging devices for electric vehicles</div>
+                        <div class="institution">Indian Patent Application</div>
+                        <div class="year">2023</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="degree">Self-cleaning sanitizer bottle</div>
+                        <div class="institution">Indian Design Patent</div>
+                        <div class="year">2022</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎓 Certifications</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">Google Digital Marketing</div>
+                    <div class="skill-item">AWS Academy Graduate</div>
+                    <div class="skill-item">Microsoft Innovative Educator</div>
+                    <div class="skill-item">SAP (SD Module)</div>
+                    <div class="skill-item">D-Link Networking Certified</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 Dr. Abhishek Bhattacherjee. All rights reserved.</p>
+        </div>
     </div>
-  </section>
 
-  <!-- About -->
-  <section class="section">
-    <h2>About LPU</h2>
-    <p>LPU is one of the leading private universities in India, recognized for its excellence in teaching, innovation, and state-of-the-art infrastructure. With students from over 50 countries, it’s a global hub for higher learning.</p>
-  </section>
+    <script>
+        // Add smooth scrolling and animation effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate sections on scroll
+            const sections = document.querySelectorAll('.section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
 
-  <!-- Programs -->
-  <section class="section" id="programs">
-    <h2>Top Programs</h2>
-    <div class="programs">
-      <div class="card">
-        <h3>B.Tech (CSE)</h3>
-        <p>Specializations in AI, ML, Cloud Computing, Cybersecurity & more.</p>
-      </div>
-      <div class="card">
-        <h3>MBA</h3>
-        <p>World-class business education with global exposure and placements.</p>
-      </div>
-      <div class="card">
-        <h3>Design</h3>
-        <p>Cutting-edge curriculum in UX/UI, Animation, and Product Design.</p>
-      </div>
-    </div>
-  </section>
+            sections.forEach(section => {
+                observer.observe(section);
+            });
 
-  <!-- Campus Highlights -->
-  <section class="section">
-    <h2>Campus Highlights</h2>
-    <div class="highlights">
-      <div class="card">
-        <h3>Modern Labs</h3>
-        <p>Equipped with the latest tools for research & experimentation.</p>
-      </div>
-      <div class="card">
-        <h3>Sports Facilities</h3>
-        <p>Olympic-level infrastructure for over 25 sports and activities.</p>
-      </div>
-      <div class="card">
-        <h3>Global Ties</h3>
-        <p>Partnerships with 200+ universities across 40 countries.</p>
-      </div>
-    </div>
-    <a href="https://www.lpu.in" class="btn" target="_blank">Visit Official Website</a>
-  </section>
+            // Add click effects to skill items
+            const skillItems = document.querySelectorAll('.skill-item');
+            skillItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1.05)';
+                    }, 100);
+                });
+            });
 
+            // Add hover effects to timeline items
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            timelineItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.boxShadow = '0 5px 20px rgba(102, 126, 234, 0.3)';
+                });
+                item.addEventListener('mouseleave', function() {
+                    this.style.boxShadow = 'none';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
